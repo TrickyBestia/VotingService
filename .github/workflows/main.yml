@@ -1,0 +1,31 @@
+name: Main VotingService CI
+
+on: [push, pull_request]
+
+jobs:
+  Build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Pull repository
+        uses: actions/checkout@v2.3.1
+
+      - name: Setup .NET 5.0 SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Build
+        run: dotnet build -c Release
+
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: VotingService
+          path: VotingService\bin\Release\VotingService.dll
+
+      - name: Upload documentation file
+        uses: actions/upload-artifact@v2
+        with:
+          name: Documentation
+          path: VotingService\obj\Release\VotingService.xml

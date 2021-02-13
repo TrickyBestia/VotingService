@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <Version>1.0.0</Version>
+    <Company>TrickyBestia</Company>
+    <Copyright>Copyright (c) TrickyBestia $([System.DateTime]::Now.ToString("yyyy"))</Copyright>
+    <NoWarn>1701;1702;SA1600;SA1602;SA0001;CS1591</NoWarn>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+</Project>
